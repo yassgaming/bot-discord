@@ -4,15 +4,8 @@ var prefix = "+";
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-const Discord = require('discord.js');
-const client = new Discord.Client();
-client.on('ready', () => {
-  client.user.setGame('*help | *invite','https://www.twitch.tv/peery13');
-  console.log('---------------');
-  console.log(' Bot Is Online')
-  console.log('---------------')
-});
-	
+
+client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
 client.on('message', message => {
         if (message.content.startsWith(prefix + "uptime")) {
     let ms = client.uptime;
@@ -736,4 +729,3 @@ client.on("message", msg => {
       msg.channel.send({embed: embed})
   }
 });
-client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
